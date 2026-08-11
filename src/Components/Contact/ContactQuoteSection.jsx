@@ -6,7 +6,7 @@ const ContactQuoteSection = () => {
     <Box
       component="section"
       sx={{
-        backgroundImage: `url('/images/workspace-background.jpg')`, // Replace with your background image path
+        backgroundImage: `url('/images/products/hero.jpg')`, // Replace with your background image path
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -23,7 +23,7 @@ const ContactQuoteSection = () => {
           <Paper
             elevation={3}
             sx={{
-              backgroundColor: '#1A5CE5', // Bright blue background
+              backgroundColor: '#263D2A', // Bright blue background
               borderRadius: '16px',
               padding: '32px',
               color: '#FFFFFF', // White text
@@ -152,14 +152,14 @@ const ContactQuoteSection = () => {
                 fullWidth
                 variant="contained"
                 sx={{
-                  backgroundColor: '#1A5CE5', // Bright blue background
+              backgroundColor: '#263D2A', // Bright blue background
                   color: '#FFFFFF', // White text
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   borderRadius: '50px', // Pill-shaped button
                   paddingY: '12px',
                   '&:hover': {
-                    backgroundColor: '#174BB8', // Darker blue on hover
+                    backgroundColor: '#387543', // Darker blue on hover
                   },
                 }}
               >
