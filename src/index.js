@@ -1,13 +1,30 @@
 import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ContactQuoteSection from './Components/Contact/ContactQuoteSection';
+import RootLayout from './RootLayout';
+import AppRoutes from "./AppRoutes.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />, // Main shell/navbar layout
+    // errorElement: <NotFound />, // 404 handler
+    children: [
+      { path: '/contact', element: <ContactQuoteSection /> }
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AppRoutes />
+    </Router>
   </React.StrictMode>
 );
 
