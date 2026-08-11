@@ -1,13 +1,11 @@
 import React from 'react';
-import { Box, Typography, Button, Container } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
-
-const HERO_BACKGROUND_IMAGE = '/images/forest-hero.jpg';
 
 const HeroSection = styled(Box)(({ theme }) => ({
   position: 'relative',
   height: '100vh',
-  backgroundImage: `url(${HERO_BACKGROUND_IMAGE})`,
+  backgroundImage: `url('/images/products/hero.jpg')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   display: 'flex',
@@ -26,7 +24,7 @@ const HeroSection = styled(Box)(({ theme }) => ({
   animation: 'heroAnimation 20s infinite alternate',
   '@keyframes heroAnimation': {
     '0%': { transform: 'scale(1)' },
-    '100%': { transform: 'scale(1.1)' },
+    '100%': { transform: 'scale(1.4)' },
   },
   '@media (prefers-reduced-motion: reduce)': {
     animation: 'none',

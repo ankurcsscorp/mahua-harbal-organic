@@ -8,7 +8,8 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<RootLayout showHero><App/></RootLayout>}/>
             <Route path="/contact" element={<RootLayout showHero><ContactQuoteSection/></RootLayout>}/>
-            <Route path="*" element={<Navigate to="/"/>}/>
+            {/* <Route path="*" element={<Navigate to="/"/>}/> */}
+            {/* <Route path="*" element={<RootLayout showHero><App/></RootLayout>}/> */}
         </Routes>
     )
 }
