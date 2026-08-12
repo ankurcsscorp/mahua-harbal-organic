@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useNavigate } from 'react-router-dom';
 
 const CallToAction = () => {
+  const navigation = useNavigate();
   return (
     <Box
       component="section"
@@ -65,6 +67,7 @@ const CallToAction = () => {
               backgroundColor: '#B87F2A', // Darker golden-tan on hover
             },
           }}
+          onClick={() => {navigation('/contact')}}
         >
           Request a Quote
         </Button>

@@ -74,6 +74,26 @@ const Footer = () => {
             >
               EST. MADHYA PRADESH
             </Typography>
+            <Button
+              variant="outlined"
+              sx={{
+                color: '#C58A25',
+                borderColor: '#C58A25',
+                textTransform: 'none',
+                fontSize: '14px',
+                padding: '8px 16px',
+                marginTop: '16px',
+                '&:hover': {
+                  backgroundColor: '#C58A25',
+                  color: '#263D2A',
+                  borderColor: '#C58A25',
+                  justifyContent: 'end',
+                  
+                },
+              }}
+            >
+              Become a Buyer
+            </Button>
           </Grid>
 
           {/* Column 2: Navigate */}
@@ -186,23 +206,6 @@ const Footer = () => {
             >
               satpuranaturals.in
             </Typography>
-            <Button
-              variant="outlined"
-              sx={{
-                color: '#C58A25',
-                borderColor: '#C58A25',
-                textTransform: 'none',
-                fontSize: '14px',
-                padding: '8px 16px',
-                '&:hover': {
-                  backgroundColor: '#C58A25',
-                  color: '#263D2A',
-                  borderColor: '#C58A25',
-                },
-              }}
-            >
-              Become a Buyer
-            </Button>
           </Grid>
         </Grid>
 

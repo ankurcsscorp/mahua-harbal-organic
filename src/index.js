@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import ContactQuoteSection from './Components/Contact/ContactQuoteSection';
 import RootLayout from './RootLayout';
 import AppRoutes from "./AppRoutes.jsx";
+import ScrollToTop from './ScrollToTop.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <ScrollToTop />
       <AppRoutes />
     </Router>
   </React.StrictMode>
