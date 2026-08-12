@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
+import { useNavigate } from 'react-router-dom';
 const HeroSection = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
@@ -104,12 +105,13 @@ const CTAButton = styled(Button)(({ theme }) => ({
   fontWeight: 'bold',
   margin: theme.spacing(1),
 }));
-const productGallery = document.getElementById('product-gallery');
 const handleProductClick = () => {
+  const productGallery = document.getElementById('product-gallery');
   productGallery.scrollIntoView({ behavior: 'smooth' });
 }
 
 const Hero = () => {
+  const navigation = useNavigate();
   return (
     <HeroSection>
       <HeroContent>
@@ -122,7 +124,7 @@ const Hero = () => {
           <CTAButton variant="contained" color="warning" onClick={handleProductClick}>
             Explore Our Products →
           </CTAButton>
-          <CTAButton variant="outlined" color="inherit">
+          <CTAButton variant="outlined" color="inherit" onClick={()=>navigation("/contact")}>
             Become a Buyer
           </CTAButton>
         </Box>

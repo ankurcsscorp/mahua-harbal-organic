@@ -67,7 +67,7 @@ const CallToAction = () => {
               backgroundColor: '#B87F2A', // Darker golden-tan on hover
             },
           }}
-          onClick={() => {navigation('/contact')}}
+          onClick={() => {navigation('/quote')}}
         >
           Request a Quote
         </Button>
@@ -88,6 +88,7 @@ const CallToAction = () => {
               borderColor: '#FFFFFF',
             },
           }}
+          onClick={() => {navigation('/contact')}}
         >
           Contact Us
         </Button>

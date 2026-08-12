@@ -9,16 +9,16 @@ import RootLayout from './RootLayout';
 import AppRoutes from "./AppRoutes.jsx";
 import ScrollToTop from './ScrollToTop.jsx';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />, // Main shell/navbar layout
-    // errorElement: <NotFound />, // 404 handler
-    children: [
-      { path: '/contact', element: <ContactQuoteSection /> }
-    ],
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <RootLayout />, // Main shell/navbar layout
+//     // errorElement: <NotFound />, // 404 handler
+//     children: [
+//       { path: '/contact', element: <ContactQuoteSection /> }
+//     ],
+//   },
+// ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

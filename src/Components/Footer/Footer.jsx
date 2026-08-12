@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Grid, Typography, Button, Divider, Link, Stack } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const navigationLinks = [
   { label: "About Us", href: "#" },
@@ -18,6 +19,7 @@ const productLinks = [
 ];
 
 const Footer = () => {
+  const navigation = useNavigate();
   return (
     <Box
       component="footer"
@@ -91,6 +93,7 @@ const Footer = () => {
                   
                 },
               }}
+              onClick={()=>navigation("/contact")}
             >
               Become a Buyer
             </Button>
@@ -226,7 +229,7 @@ const Footer = () => {
           >
             © 2026 Satpura Naturals. All rights reserved.
           </Typography>
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2} style={{marginLeft: "5%"}}>
             {["FSSAI Certified", "Organic Certified", "ISO 22000"].map((badge, index) => (
               <Box
                 key={index}

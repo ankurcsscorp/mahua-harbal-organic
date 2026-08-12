@@ -8,8 +8,12 @@ import {
   Button,
   Link,
 } from "@mui/material";
+import { useLocation } from "react-router-dom";
 
 const ContactQuoteSection = () => {
+  const location = useLocation();
+
+  const pathUrl = location.pathname;
   return (
     <Box
       component="section"
@@ -59,7 +63,7 @@ const ContactQuoteSection = () => {
                 fontSize: "12px",
                 fontWeight: 300,
                 textTransform: "uppercase",
-                marginBottom: "0px",
+                marginBottom: `${pathUrl === "/contact" ? "60px" : "0px"}`,
                 display: "block",
               }}
             >
@@ -160,7 +164,7 @@ const ContactQuoteSection = () => {
                 marginBottom: "16px",
               }}
             >
-              Contact Us
+              {pathUrl === "/contact" ? "Contact Us" : "Get an Estimate"}
             </Typography>
             <Typography
               variant="h5"
@@ -171,7 +175,7 @@ const ContactQuoteSection = () => {
                 color: "#333333", // Dark text
               }}
             >
-              Request A Quote
+              {pathUrl === "/contact" ? "Get in Touch" : "Request a Quote"}
             </Typography>
             <Box component="form" noValidate autoComplete="off">
               <TextField
@@ -188,6 +192,15 @@ const ContactQuoteSection = () => {
                 placeholder="Enter your Email"
                 sx={{ marginBottom: "24px" }}
               />
+              {pathUrl === "/contact" && (
+                <TextField
+                  fullWidth
+                  variant="standard"
+                  label="Mobile Number"
+                  placeholder="Enter your Mobile Number"
+                  sx={{ marginBottom: "24px" }}
+                />
+              )}
               <TextField
                 fullWidth
                 variant="standard"

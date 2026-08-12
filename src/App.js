@@ -9,6 +9,7 @@ import GlobalRegions from "./Components/Regions/GlobalRegions";
 import Standards from "./Components/Standard/Standards";
 import { useLocation } from "react-router-dom";
 import Hero from "./Components/Header/Hero";
+import products from "./Components/ProductGallary/ProductData";
 
 const App = () => {
   const location = useLocation();
@@ -35,7 +36,10 @@ const App = () => {
     <>
       <Hero/>
       <Introduction />
-      <ProductGallery />
+      <ProductGallery
+      products={products.slice(0, 3)}
+      showViewAll={true}
+      />
       <WhySatpuraNaturals />
       <RootedInCommunity />
       <HarvestedWithIntention />

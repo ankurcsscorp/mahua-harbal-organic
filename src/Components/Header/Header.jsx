@@ -140,7 +140,7 @@ const Header = () => {
 
             <QuoteButton
               variant="outlined"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('/quote')}
             >
               Request a Quote
             </QuoteButton>
@@ -182,7 +182,7 @@ const Header = () => {
               <QuoteButton
                 fullWidth
                 onClick={() => {
-                  navigate('/contact');
+                  navigate('/quote');
                   setDrawerOpen(false);
                 }}
               >
