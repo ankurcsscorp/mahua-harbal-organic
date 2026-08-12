@@ -1,33 +1,66 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
-
 const HeroSection = styled(Box)(({ theme }) => ({
   position: 'relative',
+  width: '100%',
   height: '100vh',
-  backgroundImage: `url('/images/products/hero.jpg')`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  overflow: 'hidden',
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
+  // Background image layer
   '&::before': {
     content: '""',
     position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
+    inset: '-5%',
+
+    backgroundImage: `url('/images/products/hero.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+
+    animation: 'heroBackgroundAnimation 20s infinite alternate',
+
+    zIndex: 0,
+  },
+
+  // Green overlay
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    inset: 0,
+
     backgroundColor: 'rgba(0, 51, 25, 0.6)',
+
     zIndex: 1,
   },
-  animation: 'heroAnimation 20s infinite alternate',
-  '@keyframes heroAnimation': {
-    '0%': { transform: 'scale(1)' },
-    '100%': { transform: 'scale(1.4)' },
+
+  '@keyframes heroBackgroundAnimation': {
+    '0%': {
+      transform: 'scale(1)',
+    },
+    '100%': {
+      transform: 'scale(1.15)',
+    },
   },
+
+  // No animation on mobile
+  [theme.breakpoints.down('sm')]: {
+    '&::before': {
+      animation: 'none',
+      transform: 'scale(1)',
+    },
+  },
+
+  // Accessibility
   '@media (prefers-reduced-motion: reduce)': {
-    animation: 'none',
+    '&::before': {
+      animation: 'none',
+      transform: 'scale(1)',
+    },
   },
 }));
 
@@ -71,6 +104,10 @@ const CTAButton = styled(Button)(({ theme }) => ({
   fontWeight: 'bold',
   margin: theme.spacing(1),
 }));
+const productGallery = document.getElementById('product-gallery');
+const handleProductClick = () => {
+  productGallery.scrollIntoView({ behavior: 'smooth' });
+}
 
 const Hero = () => {
   return (
@@ -82,7 +119,7 @@ const Hero = () => {
           Premium Mahua botanicals, ethically sourced from the ancient Satpura forests of Madhya Pradesh.
         </HeroSubtitle>
         <Box sx={{ mt: 3, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'center' }}>
-          <CTAButton variant="contained" color="warning">
+          <CTAButton variant="contained" color="warning" onClick={handleProductClick}>
             Explore Our Products →
           </CTAButton>
           <CTAButton variant="outlined" color="inherit">
